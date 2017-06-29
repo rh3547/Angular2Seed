@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
 import { User } from '../../core/models/user.model';
+var $ = require('jquery');
 
 @Component({
     selector: 'home',
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
+        $(document).ready(function() {
+            console.log("jquery!");
+        });
     }
 
     ngOnDestroy() {

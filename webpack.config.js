@@ -69,6 +69,9 @@ module.exports = function makeWebpackConfig() {
     config.resolve = {
         // only discover files that have those extensions
         extensions : ['.ts', '.js', '.json', '.css', '.scss', '.html'],
+        alias: {
+            jquery: "jquery/dist/jquery.min"
+        }
     };
 
     var atlOptions = '';
@@ -201,6 +204,10 @@ module.exports = function makeWebpackConfig() {
                     })
                 ]
             }
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ];
 
